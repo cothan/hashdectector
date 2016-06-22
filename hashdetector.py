@@ -10,10 +10,12 @@ def HashDetector(hash):
 	out = [] 
 	h = HashID()
 	for i in  HashID().identifyHash(hash):
-		if i.hashcat != None or i.john!= None:
+		if i.hashcat == None and i.john == None:
+			out.append(i.name)
+		else:
 			temp = [i.name, i.hashcat, i.john, i.extended]
 			table.append(temp)
-			out.append(i.name)
+			
 
 	pretty_table = AsciiTable(table)
 	return pretty_table.table, out
@@ -24,5 +26,6 @@ if __name__=='__main__':
 		sys.exit() 
 
 	table, out = HashDetector(sys.argv[1])
-	print "Useless Guess:", ' '.join(out)
 	print table
+	print "Useless Guess:", '  |  '.join(out)
+	
