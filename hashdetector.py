@@ -7,18 +7,22 @@ def HashDetector(hash):
 	table  = [
 		['Hash Name', 'Hashcat', 'John', 'Extended'],
 	]
-
+	out = [] 
 	h = HashID()
 	for i in  HashID().identifyHash(hash):
-		temp = [i.name, i.hashcat, i.john, i.extended]
-		table.append(temp)
+		if i.hashcat != None or i.john!= None:
+			temp = [i.name, i.hashcat, i.john, i.extended]
+			table.append(temp)
+			out.append(i.name)
 
 	pretty_table = AsciiTable(table)
-	return pretty_table.table
+	return pretty_table.table, out
 
 if __name__=='__main__':
 	if len(sys.argv) < 2:
 		print 'Usage: ./HashDetector.py hash_in_hex'
 		sys.exit() 
 
-	print HashDetector(sys.argv[1])
+	table, out = HashDetector(sys.argv[1])
+	print "Useless Guess:", ' '.join(out)
+	print table
