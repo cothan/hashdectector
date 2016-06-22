@@ -1,6 +1,34 @@
 # HashDetector
 A script for detect the hash type. To find out hash mode in Hashcat and John the Ripper(JtR)
 
+## Installation
+Support Python2 currently
+
+```bash
+pip install hashid terminaltables
+git clone https://github.com/cothan/hashcenter.git
+```
+
+## Usage
+```
+usage: hashdetector.py [-e] [-m] [-j] [-h] [-v] [INPUT [INPUT ...]]
+
+Identify the different types of hashes used to encrypt data
+
+positional arguments:
+  INPUT           input to analyze (default: STDIN)
+
+optional:
+  -e, --extended  list all possible hash algorithms including salted passwords
+  -m, --mode      show corresponding Hashcat mode in output
+  -j, --john      show corresponding JohnTheRipper format in output
+  -h, --help      show this help message and exit
+  -v, --verbose   show useless guesses, which don't work in both Hashcat and
+                  JohnTheRipper
+
+```
+
+
 ```python
 In [4]: import hashlib
 

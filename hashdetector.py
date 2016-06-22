@@ -91,7 +91,7 @@ if __name__=='__main__':
 						help="show this help message and exit")
 	group.add_argument('-v', '--verbose',
 						action="store_true",
-						help="show useless guesses, which don't work in both Hashcat and Jtr")
+						help="show useless guesses, which don't work in both Hashcat and JohnTheRipper")
 	
 
 	args = parser.parse_args()
