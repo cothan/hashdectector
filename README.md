@@ -1,5 +1,5 @@
 # HashDetector
-A script for detect the hash type. To find out hash mode in Hashcat and John the Ripper(JtR)
+A script for detect the hash type. To find out hash mode in Hashcat and John the Ripper(John the Ripper)
 
 ## Installation
 Support Python2 currently
@@ -27,7 +27,7 @@ optional:
                   JohnTheRipper
 
 ```
-
+# Example
 
 ```python
 In [4]: import hashlib
@@ -66,7 +66,7 @@ $ python hashdetector.py 6320d911a82443ee35f0ab6b451e32a2bec4caa9 -v
 Useless Guess: Tiger-160 | Skein-512(160) | HAS-160 | MangosWeb Enhanced CMS | Haval-160 | Cisco Type 7 | Skein-256(160)
 
 ```
-**Useless Guess** is the hash type doesn't work in both JtR and Hashcat
+**Useless Guess** is the hash type doesn't work in both John the Ripper and Hashcat
 
 ## Read from STDIN and filter Hashcat
 
@@ -101,7 +101,7 @@ None
 
 ```
 
-## Read from file and filter JtR
+## Read from file and filter John the Ripper
 
 ```
 $ python hashdetector.py hashes -j
@@ -147,13 +147,13 @@ $ python hashdetector.py hashes -j
 ```
 $ hashid ea5687d14c4e8e1072528ad5ec2b8829cd1e2633 -j -m -e 
 Analyzing 'ea5687d14c4e8e1072528ad5ec2b8829cd1e2633'
-[+] SHA-1 [Hashcat Mode: 100][JtR Format: raw-sha1]
+[+] SHA-1 [Hashcat Mode: 100][John the Ripper Format: raw-sha1]
 [+] Double SHA-1 [Hashcat Mode: 4500]
-[+] RIPEMD-160 [Hashcat Mode: 6000][JtR Format: ripemd-160]
+[+] RIPEMD-160 [Hashcat Mode: 6000][John the Ripper Format: ripemd-160]
 [+] Haval-160 
 [+] Tiger-160 
 [+] HAS-160 
-[+] LinkedIn [Hashcat Mode: 190][JtR Format: raw-sha1-linkedin]
+[+] LinkedIn [Hashcat Mode: 190][John the Ripper Format: raw-sha1-linkedin]
 [+] Skein-256(160) 
 [+] Skein-512(160) 
 [+] MangosWeb Enhanced CMS 
@@ -163,11 +163,11 @@ Analyzing 'ea5687d14c4e8e1072528ad5ec2b8829cd1e2633'
 [+] sha1($salt.$pass) [Hashcat Mode: 120]
 [+] sha1(unicode($pass).$salt) [Hashcat Mode: 130]
 [+] sha1($salt.unicode($pass)) [Hashcat Mode: 140]
-[+] HMAC-SHA1 (key = $pass) [Hashcat Mode: 150][JtR Format: hmac-sha1]
-[+] HMAC-SHA1 (key = $salt) [Hashcat Mode: 160][JtR Format: hmac-sha1]
+[+] HMAC-SHA1 (key = $pass) [Hashcat Mode: 150][John the Ripper Format: hmac-sha1]
+[+] HMAC-SHA1 (key = $salt) [Hashcat Mode: 160][John the Ripper Format: hmac-sha1]
 [+] sha1($salt.$pass.$salt) [Hashcat Mode: 4710]
 [+] Cisco Type 7 
-[+] BigCrypt [JtR Format: bigcrypt]
+[+] BigCrypt [John the Ripper Format: bigcrypt]
 ```
 
 ## With HashDectector
@@ -196,6 +196,6 @@ $ python hashdetector.py ea5687d14c4e8e1072528ad5ec2b8829cd1e2633 -j -m -e -v
 Useless Guess: Tiger-160 | Skein-512(160) | HAS-160 | MangosWeb Enhanced CMS | Haval-160 | Cisco Type 7 | Skein-256(160)
 ```
 
-**Tips**: `-m` for Hashcat and `--format=` for JtR
+**Tips**: `-m` for Hashcat and `--format=` for John the Ripper
 
 **Credit to HashID** I just make it more convenient for me
