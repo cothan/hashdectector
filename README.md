@@ -20,12 +20,8 @@ $python hashdetector.py a8f5f167f44f4964e6c998dee827110c
 | LM                          | 3000    | lm          | False    |
 | RIPEMD-128                  | None    | ripemd-128  | False    |
 | Haval-128                   | None    | haval-128-4 | False    |
-| Tiger-128                   | None    | None        | False    |
-| Skein-256(128)              | None    | None        | False    |
-| Skein-512(128)              | None    | None        | False    |
 | Lotus Notes/Domino 5        | 8600    | lotus5      | False    |
 | Skype                       | 23      | None        | False    |
-| ZipMonster                  | None    | None        | True     |
 | PrestaShop                  | 11000   | None        | True     |
 | md5(md5(md5($pass)))        | 3500    | None        | True     |
 | md5(strtoupper(md5($pass))) | 4300    | None        | True     |
@@ -50,10 +46,14 @@ $python hashdetector.py a8f5f167f44f4964e6c998dee827110c
 | Domain Cached Credentials 2 | 2100    | mscach2     | False    |
 | DNSSEC(NSEC3)               | 8300    | None        | False    |
 | RAdmin v2.x                 | 9900    | radmin      | False    |
-| Cisco Type 7                | None    | None        | True     |
 | BigCrypt                    | None    | bigcrypt    | True     |
 +-----------------------------+---------+-------------+----------+
+Useless Guess: Tiger-128  |  Skein-256(128)  |  Skein-512(128)  |  ZipMonster  |  Cisco Type 7
+
 ```
+**Useless Guess** is the hash mode doesn't work in both JtR and HashCat
+
+
 **Tips**: `-m` for HashCat and `--format=` for JtR
 
 **Credit to HashID** I just make it more convenient for me
