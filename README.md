@@ -6,7 +6,7 @@ Support Python2 currently
 
 ```bash
 pip install hashid terminaltables
-git clone https://github.com/cothan/hashcenter.git
+clone this git
 ```
 
 ## Usage
